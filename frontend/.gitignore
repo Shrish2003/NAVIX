@@ -51,9 +51,11 @@ Thumbs.db
 node_modules/
 venv/
 __pycache__/
+*.pyc
 .env
-dist/
-build/
 *.log
+*.zip
+
 kafka/kafka_server/
 kafka/kafka-logs/
+osrm/

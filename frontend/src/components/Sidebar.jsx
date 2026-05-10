@@ -2,10 +2,11 @@ import React from "react";
 
 const Sidebar = ({ activeTab = "dashboard", onTabChange = () => {} }) => {
   const tabs = [
-    { id: "dashboard", label: "Dashboard", icon: "📊" },
-    { id: "vehicles", label: "Vehicles", icon: "🚗" },
-    { id: "routes", label: "Routes", icon: "🛣️" },
-    { id: "optimization", label: "Optimization", icon: "⚡" },
+    { id: "dashboard",   label: "Dashboard",   icon: "📊" },
+    { id: "vehicles",    label: "Vehicles",    icon: "🚗" },
+    { id: "routes",      label: "Routes",      icon: "🛣️" },
+    { id: "task-center", label: "Task Center",  icon: "📋" },
+    { id: "optimization",label: "AI Insights",  icon: "🧠" },
   ];
 
   return (

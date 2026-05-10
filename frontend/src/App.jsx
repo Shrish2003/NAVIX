@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Vehicles from "./pages/Vehicles";
+import RoutesPage from "./pages/RoutesPage";
+import AIInsightsPage from "./pages/AIInsightsPage";
+import TaskCenterPage from "./pages/TaskCenterPage";
 import FloatingChatbot from "./components/FloatingChatbot";
+
 
 function App() {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -35,23 +39,11 @@ function App() {
       case "vehicles":
         return <Vehicles />;
       case "routes":
-        return (
-          <div className="h-full flex items-center justify-center text-slate-400">
-            <div className="text-center">
-              <p className="text-2xl mb-2">🛣️</p>
-              <p>Routes module coming soon</p>
-            </div>
-          </div>
-        );
+        return <RoutesPage />;
+      case "task-center":
+        return <TaskCenterPage />;
       case "optimization":
-        return (
-          <div className="h-full flex items-center justify-center text-slate-400">
-            <div className="text-center">
-              <p className="text-2xl mb-2">⚡</p>
-              <p>Optimization details coming soon</p>
-            </div>
-          </div>
-        );
+        return <AIInsightsPage />;
       default:
         return <Dashboard />;
     }
@@ -67,7 +59,9 @@ function App() {
         {/* Top Navigation Bar */}
         <div className="flex-shrink-0 h-16 bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-700 flex items-center px-6">
           <h1 className="text-xl font-bold text-white">
-            {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+            {activeTab === "optimization" ? "AI Insights"
+              : activeTab === "task-center" ? "Task Center"
+              : activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
           </h1>
           <div className="ml-auto flex items-center gap-4">
             <div className="text-sm text-slate-400">
